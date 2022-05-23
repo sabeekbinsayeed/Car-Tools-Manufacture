@@ -1,0 +1,56 @@
+[
+    {
+        "_id": 1,
+        "name": "Handle",
+        "price": "3000",
+        "a_quantity": 10,
+        "min_quantity": 2,
+        "description": "Windows 11 Home11th Generation Intel® Core™ i7 processorIntel® Iris® Xᵉ Graphics16 GB memory; 512 GB SSD storage16, diagonal 3K+ touch display",
+        "img": "https://images.unsplash.com/photo-1587350855551-3c0be8c6c4aa?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870"
+    },
+    {
+        "_id": 2,
+        "name": "Tyres",
+        "price": "5000",
+        "a_quantity": 100,
+        "min_quantity": 10,
+        "description": "Windows 11 Home11th Generation Intel® Core™ i7 processorIntel® Iris® Xᵉ Graphics16 GB memory; 512 GB SSD storage16, diagonal 3K+ touch display",
+        "img": "https://images.unsplash.com/photo-1547574840-4ea7b6c4337d?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dHlyZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=500"
+    },
+    {
+        "_id": 3,
+        "name": "Headlight",
+        "price": "13000",
+        "a_quantity": 240,
+        "min_quantity": 90,
+        "description": "Windows 11 Home11th Generation Intel® Core™ i7 processorIntel® Iris® Xᵉ Graphics16 GB memory; 512 GB SSD storage16, diagonal 3K+ touch display",
+        "img": "https://images.unsplash.com/photo-1548087713-b1fdffcfddff?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170"
+    },
+    {
+        "_id": 4,
+        "name": "Headlight",
+        "price": "13000",
+        "a_quantity": 240,
+        "min_quantity": 90,
+        "description": "Windows 11 Home11th Generation Intel® Core™ i7 processorIntel® Iris® Xᵉ Graphics16 GB memory; 512 GB SSD storage16, diagonal 3K+ touch display",
+        "img": "https://images.unsplash.com/photo-1614530499660-fe1fbd7921d6?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170"
+    },
+    {
+        "_id": 5,
+        "name": "Headlight",
+        "price": "13000",
+        "a_quantity": 240,
+        "min_quantity": 90,
+        "description": "Windows 11 Home11th Generation Intel® Core™ i7 processorIntel® Iris® Xᵉ Graphics16 GB memory; 512 GB SSD storage16, diagonal 3K+ touch display",
+        "img": "https://images.unsplash.com/photo-1603302576837-37561b2e2302?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGxhcHRvcHxlbnwwfHwwfHw%3D&w=1000&q=80"
+    },
+    {
+        "_id": 6,
+        "name": "Headlight",
+        "price": "13000",
+        "a_quantity": 240,
+        "min_quantity": 90,
+        "description": "Windows 11 Home11th Generation Intel® Core™ i7 processorIntel® Iris® Xᵉ Graphics16 GB memory; 512 GB SSD storage16, diagonal 3K+ touch display",
+        "img": "https://images.unsplash.com/photo-1603302576837-37561b2e2302?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGxhcHRvcHxlbnwwfHwwfHw%3D&w=1000&q=80"
+    }
+]
