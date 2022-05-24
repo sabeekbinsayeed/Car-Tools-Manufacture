@@ -7,6 +7,7 @@ import Purchase from './Pages/Purchase/Purchase';
 import Login from './Pages/Login/Login';
 import Navbar from './Pages/Shared/Navbar';
 import Register from './Pages/Login/Register';
+import RequireAuth from './Pages/Login/RequireAuth';
 
 function App() {
   return (
@@ -19,9 +20,9 @@ function App() {
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
-        <Route path="purchase/:id" element={
+        <Route path="purchase/:id" element={<RequireAuth>
           <Purchase />
-        }></Route>
+        </RequireAuth>}></Route>
 
 
       </Routes>

@@ -36,7 +36,7 @@ const Login = () => {
             }
 
         }
-        , [user, from, navigate])
+        , [user, googleUser, from, navigate])
 
     if (loading || googleLoading) {
         return <Loading></Loading>

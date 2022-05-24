@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
+import auth from '../../firebase.init';
 import './Purchase.css'
 
 const Purchase = () => {
@@ -10,8 +12,64 @@ const Purchase = () => {
     const from = location?.state?.from?.pathname || '/'
     const navigate = useNavigate();
     let errorElement;
+    const [tool, setTool] = useState({})
+    const [errorQuantity, setErrorQuantity] = useState('')
+
+    const [user, loading, error] = useAuthState(auth);
+    useEffect(() => {
+
+        fetch(`http://localhost:5000/tools/${id}`).then(res => res.json()).then(data => setTool(data))
+    }, [])
+    const onSubmit = data => {
+        console.log(data.quantity)
+
+        if (data.quantity < tool.min_quantity) {
+            console.log('error')
+            setErrorQuantity('error: cannnot order less than minimum quantity ')
+        }
+        else if (data.quantity > tool.a_quantity) {
+            setErrorQuantity('error: cannnot order more than available quantity')
+        }
+
+        else {
+            console.log('done good')
+
+            const purchase = {
+                name: user.displayName,
+                email: user.email,
+                quantity: data.quantity,
+                productName: tool.name,
+                pricePrice: tool.price
+
+            }
+            console.log(purchase)
+            // send to your database 
+            fetch('http://localhost:5000/purchase', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json',
+                    //authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                },
+                body: JSON.stringify(purchase)
+            })
+                .then(res => res.json())
+                .then(inserted => {
+                    console.log(inserted)
+                    // if (inserted.insertedId) {
+                    //     toast.success('Doctor added successfully')
+                    //     reset();
+                    // }
+                    // else {
+                    //     toast.error('Failed to add the doctor');
+                    // }
+                })
+
+        }
 
 
+
+
+    };
 
     return (
 
@@ -23,14 +81,14 @@ const Purchase = () => {
             <section class="mb-32 text-gray-800 text-center lg:text-left">
                 <div class="px-6 py-10 md:px-12 ">
                     <div class="grid lg:grid-cols-2 lg:gap-x-12  ">
-                        <div class="mb-12 lg:mb-0 ">
-                            <h1 className='text-2xl font-extrabold lg:text-center '>Product Name</h1>
+                        <div class="mb-12 lg:mb-0  ">
+                            <h1 className='text-2xl font-extrabold lg:text-center '>{tool.name}</h1>
                             <h1 className='text-xl font-bold my-4 lg:text-center
                             '>300 Tk</h1>
-                            <h1 className='lg:text-center'> <span className='font-bold'>Quantity Available</span> : 45</h1>
-                            <h1 className='lg:text-center'> <span className='font-bold'>Minimum allowed</span>: 10</h1>
+                            <h1 className='lg:text-center'> <span className='font-bold'>Quantity Available</span> :{tool.a_quantity}</h1>
+                            <h1 className='lg:text-center'> <span className='font-bold'>Minimum allowed</span>: {tool.min_quantity}</h1>
 
-                            <p className='mt-6 italic'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores praesentium laudantium quam! Alias consequatur impedit ipsum neque optio et est perspiciatis. Aspernatur labore doloremque omnis veniam molestias? Eum, obcaecati vero.</p>
+                            <p className='mt-6 italic'>{tool.description}</p>
 
 
 
@@ -38,61 +96,87 @@ const Purchase = () => {
                                 <div className="card lg:w-96 bg-base-100  ">
                                     <div className="card-body">
 
-                                        <form >
+                                        <form onSubmit={handleSubmit(onSubmit)}>
+
+                                            {/* name starts */}
+
+                                            <div className="form-control w-full max-w-xs">
+                                                <label className="label">
+                                                    <span className="label-text">Name</span>
+
+                                                </label>
+                                                <input type="text" value={user.displayName} disabled className="input input-bordered w-full max-w-xs"
+
+
+                                                />
+
+                                                <label className="label">
+
+
+
+
+                                                </label>
+                                            </div>
+
+                                            {/* name ends */}
 
                                             <div className="form-control w-full max-w-xs">
                                                 <label className="label">
                                                     <span className="label-text">Email</span>
 
                                                 </label>
-                                                <input type="email" placeholder="Your email" className="input input-bordered w-full max-w-xs"
-                                                    {...register("email", {
+                                                <input type="email" value={user.email} disabled className="input input-bordered w-full max-w-xs"
 
-                                                        required: { value: true, message: 'email is required' },
-                                                        pattern: { value: /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/, message: 'Provide e valid email address' }
-                                                    })}
 
                                                 />
 
                                                 <label className="label">
-                                                    {errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message} </span>}
 
 
-                                                    {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message} </span>}
+
+
                                                 </label>
                                             </div>
 
 
 
-                                            {/* password starts */}
-                                            <div className="form-control w-full max-w-xs">
-                                                <label className="label">
-                                                    <span className="label-text">Password</span>
 
-                                                </label>
-                                                <input type="password" placeholder="password" className="input input-bordered w-full max-w-xs"
-                                                    {...register("password", {
-
-                                                        required: { value: true, message: 'password is required' },
-                                                        minLength: { value: 6, message: 'Must be 6 character or longer' }
-                                                    })}
-
-                                                />
-
-                                                <label className="label">
-                                                    {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message} </span>}
-
-
-                                                    {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message} </span>}
-                                                </label>
-                                            </div>
 
 
                                             {/* ---- */}
+                                            <div className="form-control w-full max-w-xs">
+                                                <label className="label">
+                                                    <span className="label-text">Quantity</span>
 
+                                                </label>
+                                                <input type="text" placeholder="Your quantity" className="input input-bordered w-full max-w-xs"
+                                                    {...register("quantity", {
+
+                                                        required: { value: true, message: 'quantity is required' },
+
+                                                    })}
+
+                                                />
+
+                                                <label className="label">
+                                                    {errors.quantity?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message} </span>}
+
+
+
+                                                </label>
+                                                <p className='text-red-500 py-2'><small> {errorQuantity ? errorQuantity : ''}</small></p>
+
+                                            </div>
+
+
+                                            {/* end */}
 
                                             <p className='text-red-500'><small>{errorElement}</small></p>
-                                            <input class='btn w-full max-w-xs' type="submit" value='login' />
+                                            <input class='btn w-full max-w-xs' type="submit" value='login'
+
+                                            />
+
+
                                         </form>
 
 
@@ -105,17 +189,17 @@ const Purchase = () => {
                             </div>
                         </div>
 
-                        <div class="mb-12 lg:mb-0  my-14 " >
-                            <img src="https://images.unsplash.com/photo-1587350855551-3c0be8c6c4aa?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870" class=" w-full rounded-lg shadow-lg h-fit"
+                        <div class="mb-12 lg:mb-0  my-14  " >
+                            <img src={tool.img} class=" w-full rounded-lg shadow-lg h-fit"
                                 alt="" />
                         </div>
                     </div>
-                </div>
-            </section>
+                </div >
+            </section >
 
 
 
-        </div>
+        </div >
 
     );
 };
