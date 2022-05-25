@@ -13,6 +13,8 @@ const Tools = () => {
     useEffect(() => {
         fetch('http://localhost:5000/tools').then(res => res.json()).then(data => setTools(data))
     }, [])
+
+
     if (tools.length === 0) {
         return <Loading></Loading>
     }

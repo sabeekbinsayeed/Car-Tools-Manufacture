@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import auth from '../../firebase.init';
 // import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 
-// import useToken from '../../hooks/useToken';
+import useToken from '../../hooks/useToken';
 import Loading from '../Shared/Loading';
 const Register = () => {
     const navigate = useNavigate();
@@ -28,7 +28,7 @@ const Register = () => {
 
     let errorElement;
 
-    //const [token] = useToken(user || googleUser)
+    const [token] = useToken(user || googleUser)
 
     if (loading || googleLoading || updating) {
         return <Loading></Loading>
@@ -43,7 +43,7 @@ const Register = () => {
         </div>
 
     }
-    if (user || googleUser) {
+    if (token) {
         // navigate(from, { replace: true })
         navigate('/')
         console.log('user done ')

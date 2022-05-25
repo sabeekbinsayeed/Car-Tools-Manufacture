@@ -8,7 +8,7 @@ import Loading from '../Shared/Loading';
 import auth from '../../firebase.init';
 
 // import Loading from '../Loading';
-// import useToken from '../../hooks/useToken';
+import useToken from '../../hooks/useToken';
 const Login = () => {
     const [
         signInWithEmailAndPassword,
@@ -25,18 +25,18 @@ const Login = () => {
     const navigate = useNavigate();
     let errorElement;
 
-    //   const [token] = useToken(user || googleUser);
+    const [token] = useToken(user || googleUser);
 
     useEffect(
         () => {
-            if (user || googleUser) {
+            if (token) {
                 navigate(from, { replace: true })
                 console.log('user done from login ')
                 console.log(user)
             }
 
         }
-        , [user, googleUser, from, navigate])
+        , [token, from, navigate])
 
     if (loading || googleLoading) {
         return <Loading></Loading>

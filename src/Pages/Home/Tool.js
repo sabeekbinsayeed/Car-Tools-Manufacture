@@ -16,7 +16,7 @@ const Tool = props => {
     return (
         <div class="card bg-base-100 shadow-xl">
             <figure class="px-10 pt-10">
-                <img src={img} alt="Shoes" class="rounded-xl" />
+                <img src={img} alt="Shoes" class="rounded-xl hover:scale-110 transition duration-300 ease-in-out" />
             </figure>
             {/* <div class="card-body items-center  text-center"> */}
             <div class="card-body  ">
