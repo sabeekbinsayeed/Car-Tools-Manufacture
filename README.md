@@ -1,4 +1,36 @@
-# Getting Started with Create React App
+
+# Car Tools BD 
+
+We store Your favourite laptops, mobiles and gadgets. We are working for our customers for more than 10 years. We store tech machines,instruments and gadgets. We also provide proper packeting.
+
+
+
+## Site Link
+
+Open [https://warehouse-68196.web.app/](https://warehouse-68196.web.app/). to view it in your browser.
+
+### Project Features
+- User can see all the tools available for sale
+- User can see all the reviews 
+- User can order and select the quantity
+- User can add review, add products, purchase products
+- User can pay via credit card
+- User can delete their orders
+- Admin can add products
+- Admin can delete products
+- Admin can make other user admin
+- Admin and user can see their profile
+
+
+### Technology used
+- React
+- Firebase 
+- React router 
+- React bootstrap
+- React firebase hooks
+- Node
+- Express 
+- Mongodb
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
