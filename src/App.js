@@ -23,6 +23,9 @@ import Myprofile from './Pages/Myprofile/Myprofile';
 import OrderRow from './Pages/Dashboard/OrderRow';
 import DashWelcome from './Pages/Dashboard/DashWelcome';
 import MyProfiles from './Pages/Myprofile/MyProfiles';
+import DeleteProducts from './Pages/Dashboard/DeleteProducts';
+import Reviews from './Pages/Home/Reviews';
+import Footer from './Pages/Shared/Footer';
 // import MyProfiles from './Pages/Myprofile/MyProfiles';
 
 
@@ -39,6 +42,7 @@ function App() {
         <Route path="/myprofiles" element={<MyProfiles></MyProfiles>}></Route>
         <Route path="/portfolio" element={<Portfolio></Portfolio>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
+        <Route path="/review" element={<Reviews></Reviews>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/myprofile" element={<Myprofile></Myprofile>}></Route>
         <Route path="purchase/:id" element={<RequireAuth>
@@ -57,6 +61,9 @@ function App() {
             <Users />
           </RequireAdmin>}></Route>
 
+          <Route path="manage" element={<RequireAdmin>
+            <DeleteProducts />
+          </RequireAdmin>}></Route>
           <Route path="manageProducts" element={<RequireAdmin>
             <ManageProducts />
           </RequireAdmin>}></Route>
@@ -68,6 +75,7 @@ function App() {
         </Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
+      <Footer></Footer>
 
     </div>
   );

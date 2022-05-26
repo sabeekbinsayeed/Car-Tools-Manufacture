@@ -27,7 +27,7 @@ const Tools = () => {
     return (
         <div className='my-28'>
             <div className='text-center'>
-                <h3 className='text-primary uppercase font-bold text-xl'>Our Tools</h3>
+                <h3 className='text-blue-600 uppercase font-bold text-xl'>Our Tools</h3>
 
             </div>
             <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols:1 gap-x-2 gap-y-2'>

@@ -60,7 +60,7 @@ const MyOrder = () => {
         <div>
             <h2 className="text-2xl">Orders Length: {orders.length}</h2>
             <div class="overflow-x-auto">
-                <table class="table w-full">
+                <table class="table lg:w-full table-compact">
                     <thead>
                         <tr>
                             <th></th>

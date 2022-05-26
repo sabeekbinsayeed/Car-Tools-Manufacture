@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Portfolio = () => {
     return (
-        <div className='items-center my-12'>
+        <div className='lg:items-center my-12'>
             <h1 className='font-bold text-2xl text-blue-600 text-center'>Sabeek Bin Sayeed</h1>
             <h3><span className='font-bold'>email</span> : sayeed.sabeek@gmail.com</h3>
             <h3><span className='font-bold'>Phone</span>: 01738223118</h3>

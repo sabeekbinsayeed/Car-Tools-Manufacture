@@ -91,7 +91,7 @@ const Purchase = () => {
                 <div class="px-6 py-10 md:px-12 ">
                     <div class="grid lg:grid-cols-2 lg:gap-x-12  ">
                         <div class="mb-12 lg:mb-0  ">
-                            <h1 className='text-2xl font-extrabold lg:text-center '>{tool.name}</h1>
+                            <h1 className='text-2xl font-extrabold lg:text-center text-blue-500 '>{tool.name}</h1>
                             <h1 className='text-xl font-bold my-4 lg:text-center
                             '>300 Tk</h1>
                             <h1 className='lg:text-center'> <span className='font-bold'>Quantity Available</span> :{tool.a_quantity}</h1>
@@ -101,7 +101,7 @@ const Purchase = () => {
 
 
 
-                            <div className='flex lg:justify-center'>
+                            <div className='lg:flex lg:justify-center'>
                                 <div className="card lg:w-96 bg-base-100  ">
                                     <div className="card-body">
 
@@ -180,7 +180,7 @@ const Purchase = () => {
                                             {/* end */}
 
                                             <p className='text-red-500'><small>{errorElement}</small></p>
-                                            <input class='btn w-full max-w-xs' type="submit" value='login'
+                                            <input class='btn w-full max-w-xs bg-blue-600 hover:bg-white hover:text-black' type="submit" value='Submit'
 
                                             />
 
@@ -197,7 +197,7 @@ const Purchase = () => {
                             </div>
                         </div>
 
-                        <div class="mb-12 lg:mb-0  my-14  " >
+                        <div class="mb-12 lg:mb-0  lg:my-14  " >
                             <img src={tool.img} class="hover:scale-110 transition duration-300 ease-in-out w-full rounded-lg shadow-lg h-fit"
                                 alt="" />
                             {/* <div

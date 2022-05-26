@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Banner = () => {
+    const navigate = useNavigate()
     return (
         <div>
             <div id="carouselExampleCaptions" class="carousel slide relative" data-bs-ride="carousel">
@@ -35,8 +37,9 @@ const Banner = () => {
                             alt="..."
                         />
                         <div class="carousel-caption hidden md:block absolute text-center">
-                            <h5 class="text-xl">First slide label</h5>
-                            <p>Some representative placeholder content for the first slide.</p>
+                            <h5 class="text-xl text-white ">Gather knowledge from us</h5>
+                            <button onClick={() => { navigate('/blogs') }} className='bg-blue-500 btn mt-1'>Reads Blogs</button>
+
                         </div>
                     </div>
                     <div class="carousel-item relative float-left w-full">
@@ -47,9 +50,8 @@ const Banner = () => {
                             alt="..."
                         />
                         <div class="carousel-caption hidden md:block absolute text-center ">
-                            <h5 class="text-xl ">Second slide label</h5>
-                            <p>Some representative placeholder content for the second slide.</p>
-                            <button className='bg-red-500 btn'>Visit Us</button>
+                            <h5 class="text-xl text-white ">Get details information</h5>
+                            <button onClick={() => { navigate('/dashboard') }} className='bg-blue-500 btn  mt-1'>Visit dashboard</button>
                         </div>
                     </div>
                     <div class="carousel-item relative float-left w-full">
@@ -60,8 +62,8 @@ const Banner = () => {
                             alt="..."
                         />
                         <div class="carousel-caption hidden md:block absolute text-center">
-                            <h5 class="text-xl">Third slide label</h5>
-                            <p>Some representative placeholder content for the third slide.</p>
+                            <h5 class="text-xl text-white ">Your detail information</h5>
+                            <button onClick={() => { navigate('/portfolio') }} className='bg-blue-500 btn mt-1'>Your portfolio</button>
                         </div>
                     </div>
                 </div>

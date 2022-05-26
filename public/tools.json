@@ -40,10 +40,10 @@
         "img": "https://images.unsplash.com/photo-1603302576837-37561b2e2302?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGxhcHRvcHxlbnwwfHwwfHw%3D&w=1000&q=80"
     },
     {
-        "name": "Headlight",
-        "price": "13000",
-        "a_quantity": 240,
-        "min_quantity": 90,
+        "name": "Car Seats",
+        "price": "20000",
+        "a_quantity": 1000,
+        "min_quantity": 200,
         "description": "Windows 11 Home11th Generation Intel® Core™ i7 processorIntel® Iris® Xᵉ Graphics16 GB memory; 512 GB SSD storage16, diagonal 3K+ touch display",
         "img": "https://images.unsplash.com/photo-1603302576837-37561b2e2302?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGxhcHRvcHxlbnwwfHwwfHw%3D&w=1000&q=80"
     }

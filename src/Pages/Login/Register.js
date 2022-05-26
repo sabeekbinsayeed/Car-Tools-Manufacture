@@ -145,13 +145,13 @@ const Register = () => {
 
 
                         <p className='text-red-500'><small>{errorElement}</small></p>
-                        <input class='btn w-full max-w-xs' type="submit" value='Register' />
+                        <input class='btn bg-blue-600 hover:bg-white hover:text-black w-full max-w-xs' type="submit" value='Register' />
                     </form>
-                    <p><small>Already have an account ?  <Link className='text-primary' to='/login'> Please Login</Link></small></p>
+                    <p><small>Already have an account ?  <Link className='text-blue-600' to='/login'> Please Login</Link></small></p>
                     <div class='divider'>OR</div>
                     <button
                         onClick={() => signInWithGoogle()}
-                        className="btn btn-outline btn-neutral">Sign in with Google</button>
+                        className="btn btn-outline bg-blue-600 hover:bg-white hover:text-black">Sign in with Google</button>
 
 
 

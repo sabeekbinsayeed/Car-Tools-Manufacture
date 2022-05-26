@@ -29,7 +29,7 @@ const Info = () => {
                                 <div class="lg:pl-12">
                                     <h2 class="text-3xl font-bold mb-6">What are you waiting for?</h2>
                                     <p class="mb-6 pb-2 lg:pb-0">
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime, sint, repellat vel quo quisquam accusamus in qui at ipsa enim quibusdam illo laboriosam omnis. Labore itaque illum distinctio eum neque!
+                                        We are giving hight quality service. We produce tools that makes your transportation easier and we design tools of hight quality. Don't wait and join our big community
                                     </p>
                                     <button type="button" class="inline-block px-7 py-3 border-2 border-white text-white font-medium text-sm leading-snug uppercase rounded-full hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="light">Sign up now</button>
                                 </div>

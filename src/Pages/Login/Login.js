@@ -123,13 +123,13 @@ const Login = () => {
 
 
                             <p className='text-red-500'><small>{errorElement}</small></p>
-                            <input class='btn  btn-secondary w-full max-w-xs' type="submit" value='login' />
+                            <input class='btn  bg-blue-600 hover:bg-white hover:text-black w-full max-w-xs' type="submit" value='login' />
                         </form>
-                        <p><small>new to Doctors portal ?  <Link className='text-primary' to='/register'> Create new account</Link></small></p>
+                        <p><small>new to Doctors portal ?  <Link className='text-blue-600' to='/register'> Create new account</Link></small></p>
                         <div class='divider'>OR</div>
                         <button
                             onClick={() => signInWithGoogle()}
-                            className="btn btn-secondary btn-neutral">Sign in with Google</button>
+                            className="btn bg-blue-600 hover:bg-white hover:text-black">Sign in with Google</button>
 
 
 

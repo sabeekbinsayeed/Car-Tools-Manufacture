@@ -27,10 +27,10 @@ const Stats = () => {
                                     </div>
                                 </div>
                                 <div class="p-6">
-                                    <h3 class="text-2xl font-bold text-blue-600 mb-4">1000</h3>
+                                    <h3 class="text-2xl font-bold text-blue-600 mb-4">100</h3>
                                     <h5 class="text-lg font-medium mb-4">Components</h5>
                                     <p class="text-gray-500">
-                                        Laudantium totam quas cumque pariatur at doloremque hic quos quia eius
+                                        We have wide range of tools with high qualityWe always try to satisfy our customers
                                     </p>
                                 </div>
                             </div>
@@ -56,7 +56,7 @@ const Stats = () => {
                                     <h3 class="text-2xl font-bold text-blue-600 mb-4">70%</h3>
                                     <h5 class="text-lg font-medium mb-4">Growth</h5>
                                     <p class="text-gray-500">
-                                        Eum nostrum fugit numquam, voluptates veniam neque quibusdam ullam
+                                        We are growing rapidy with our performance.We have reached to most of the country very rapidly.
                                     </p>
                                 </div>
                             </div>
@@ -82,7 +82,7 @@ const Stats = () => {
                                     <h3 class="text-2xl font-bold text-blue-600 mb-4">49</h3>
                                     <h5 class="text-lg font-medium mb-4">Projects</h5>
                                     <p class="text-gray-500">
-                                        Cupiditate enim, minus nulla dolor cumque iure eveniet facere ullam
+                                        We have done in all our project and we have huge experience.
                                     </p>
                                 </div>
                             </div>

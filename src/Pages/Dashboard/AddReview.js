@@ -54,7 +54,7 @@ const AddReview = () => {
         <div className='h-screen lg:flex  justify-center mt-5 mx-auto'>
 
 
-            <div className="ml-12 card lg:w-96 bg-base-100  ">
+            <div className="lg:ml-12 card lg:w-96 bg-base-100  ">
                 <div className="card-body">
                     <h2 className="text-center text-2xl font-bold">Add a review</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>

@@ -11,31 +11,31 @@ const Myprofile = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     console.log(user, 'form profile')
 
-    const [info, setInfo] = useState([]);
+    // const [info, setInfo] = useState([]);
     // useEffect(() => {
     //     fetch(`http://localhost:5000/profile?email=${user.email}`).then(res => res.json()).then(data => setUserInfo(res))
 
     // }, [])
 
-    useEffect(() => {
-        fetch(`http://localhost:5000/profile?email=${user?.email}`).then(res => res.json()).then(data => { setInfo(data); console.log(data) })
-    }, [])
+    // useEffect(() => {
+    //     fetch(`http://localhost:5000/profile?email=${user?.email}`).then(res => res.json()).then(data => { setInfo(data); console.log(data) })
+    // }, [])
+
+
+
+    const { data: userInfo, isLoading, refetch } = useQuery('users', () => fetch(`http://localhost:5000/profile?email=${user.email}`, {
+        // headers: {
+        //     authorization: `Bearer ${localStorage.getItem('accessToken')}`
+        // }
+    }).then(res => { res.json(); console.log(userInfo) }));
+
+    if (isLoading) {
+        return <Loading></Loading>
+    }
 
     if (loading) {
         return <Loading></Loading>
     }
-
-    // const { data: userInfo, isLoading, refetch } = useQuery('users', () => fetch(`http://localhost:5000/profile?email=${user.email}`, {
-    //     // headers: {
-    //     //     authorization: `Bearer ${localStorage.getItem('accessToken')}`
-    //     // }
-    // }).then(res => { res.json(); console.log(userInfo) }));
-
-    // if (isLoading) {
-    //     return <Loading></Loading>
-    // }
-
-
 
     const onSubmit = data => {
         console.log(data)
@@ -73,15 +73,15 @@ const Myprofile = () => {
 
     }
     return (
-        <div>
-            <h1>Current info</h1>
+        <div className='items-center mx-auto'>
+            <h1 className='text-2xl font-bold text-blue-500 mb-5'>Update Info</h1>
             {/* <h2>{userInfo.name}</h2> */}
             {/* <h2>{userInfo.location}</h2> */}
             {/* <h2>{userInfo.phone}</h2> */}
 
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form className='' onSubmit={handleSubmit(onSubmit)}>
 
-                <div className="form-control w-full max-w-xs">
+                <div className="form-control items-center ">
                     <label className="label">
                         <span className="label-text"> Name</span>
 
@@ -106,7 +106,7 @@ const Myprofile = () => {
 
 
                 {/* email starts */}
-                <div className="form-control w-full max-w-xs">
+                <div className="form-control  items-center">
                     <label className="label">
                         <span className="label-text">Email</span>
 
@@ -134,7 +134,7 @@ const Myprofile = () => {
 
 
                 {/* min quantity starts */}
-                <div className="form-control w-full max-w-xs">
+                <div className="form-control items-center">
                     <label className="label">
                         <span className="label-text">Education</span>
 
@@ -161,7 +161,7 @@ const Myprofile = () => {
 
 
                 {/* Phone  starts */}
-                <div className="form-control w-full max-w-xs">
+                <div className="form-control items-center">
                     <label className="label">
                         <span className="label-text">Phone</span>
 
@@ -188,7 +188,7 @@ const Myprofile = () => {
 
 
                 {/* linkedin */}
-                <div className="form-control w-full max-w-xs">
+                <div className="form-control items-center">
                     <label className="label">
                         <span className="label-text">Linkedin Profile</span>
 
@@ -214,7 +214,7 @@ const Myprofile = () => {
 
 
                 {/* location quantity starts */}
-                <div className="form-control w-full max-w-xs">
+                <div className="form-control items-center">
                     <label className="label">
                         <span className="label-text">location </span>
 
@@ -240,7 +240,7 @@ const Myprofile = () => {
 
 
                 <p className='text-red-500'></p>
-                <input class='btn  btn-secondary w-full max-w-xs' type="submit" value='Add Product' />
+                <input class='btn  bg-blue-600 w-full max-w-xs' type="submit" value='Add Product' />
             </form>
             <ToastContainer />
         </div>

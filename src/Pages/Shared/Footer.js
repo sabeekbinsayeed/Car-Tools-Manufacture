@@ -4,7 +4,7 @@ import React from 'react';
 const Footer = () => {
     return (
         <footer className='py-10  '>
-            <div className="footer lg:flex justify-around py-10 bg-neutral text-neutral-content ">
+            <div className="footer lg:flex justify-around py-10 bg-gray-200 text-blue-900 ">
                 <div>
                     <span class="footer-title">Services</span>
                     <a class="link link-hover">Branding</a>

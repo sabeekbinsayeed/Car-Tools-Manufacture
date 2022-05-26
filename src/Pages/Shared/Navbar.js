@@ -15,18 +15,18 @@ const Navbar = () => {
     }
 
     const menuItems = <>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/appointment">Appointment</Link></li>
-        <li><Link to="/review">Review</Link></li>
-        <li><Link to="/contact">Contact</Link></li>
-        <li><Link to="/about">About</Link></li>
+        <li><Link className='lg:text-white' to="/">Home</Link></li>
+
+        <li><Link className='lg:text-white' to="/review">Review</Link></li>
+        <li><Link className='lg:text-white' to="/blogs">Blogs</Link></li>
+        <li><Link className='lg:text-white' to="/portfolio">Portfolio</Link></li>
         {
-            user && <li><Link to="/dashboard">Dashboard</Link></li>
+            user && <li><Link className='lg:text-white' to="/dashboard">Dashboard</Link></li>
         }
-        <li>{user ? <button className="btn btn-ghost" onClick={signout} >Sign Out</button> : <Link to="/login">Login</Link>}</li>
+        <li>{user ? <button className="btn btn-ghost text-white" onClick={signout} >Sign Out</button> : <Link className='lg:text-white' to="/login">Login</Link>}</li>
     </>
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-blue-600">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -37,7 +37,7 @@ const Navbar = () => {
                         {user ? <button className="btn btn-ghost" onClick={signout}>Log out</button> : <li><Link to="/login">Login</Link></li>}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">Doctors Portal</a>
+                <Link to='/' className="btn btn-ghost normal-case text-xl text-white lg:ml-12">Car Tools BD</Link>
             </div>
             <div className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">

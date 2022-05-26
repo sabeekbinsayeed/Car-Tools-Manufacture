@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
+// add products page
 const ManageProducts = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const onSubmit = data => {
@@ -52,9 +52,10 @@ const ManageProducts = () => {
     };
     return (
         <div>
-            <div className="card w-96 bg-base-100 shadow-xl ">
+            <div className="  bg-base-100 shadow-xl lg:flex flex-reverse">
+
                 <div className="card-body">
-                    <h2 className="text-center text-2xl font-bold">Add Products</h2>
+                    <h2 className="text-center text-2xl font-bold text-blue-500">Add Products</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
 
                         <div className="form-control w-full max-w-xs">
@@ -216,12 +217,16 @@ const ManageProducts = () => {
 
 
                         <p className='text-red-500'></p>
-                        <input class='btn  btn-secondary w-full max-w-xs' type="submit" value='Add Product' />
+                        <input class='btn  bg-white text-black hover:bg-blue-600 hover:text-white w-full max-w-xs' type="submit" value='Add Product' />
                     </form>
 
 
 
                 </div>
+                <div>
+                    <img className='w-50' src='https://images.unsplash.com/photo-1589750602846-60028879da9b?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Ymx1ZSUyMGNhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500'></img>
+                </div>
+
                 <ToastContainer />
             </div>
         </div>

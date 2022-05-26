@@ -20,16 +20,17 @@ const Tool = props => {
             </figure>
             {/* <div class="card-body items-center  text-center"> */}
             <div class="card-body  ">
-                <h2 className="items-center text-2xl  ">{name}</h2>
-                <h4 className="items-center text-xl text-red-500">Available quantity: {a_quantity}</h4>
+                <h2 className="items-center text-2xl font-bold ">{name}</h2>
+                <h4 className="items-center text-xl "><span className='text-black font-semibold'>Available quantity:
+                </span> {a_quantity}</h4>
 
-                <p className=' text-sm divide-y'>{description}</p>
-                <hr className='bg-black'></hr>
-                <div className='flex justify-around items-center '>
-                    <p> <span className='text-car-800 font-bold'>Price: </span> {price}</p>
-                    <button onClick={() => navigate(`/purchase/${_id}`)} class="btn btn-secondary ">Purchase</button>
-                </div>
-                <div class="items-center">
+
+                <div className=' items-center my-2 '>
+                    <p> <span className='text-car-800 font-bold'>Price: </span> {price} per unit</p>
+
+                    <div class="items-center mt-2">
+                        <button onClick={() => navigate(`/purchase/${_id}`)} class="btn   bg-blue-500  text-white hover:bg-white hover:text-black ">Purchase</button>
+                    </div>
 
                 </div>
             </div>
