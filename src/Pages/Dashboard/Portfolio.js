@@ -23,6 +23,7 @@ const Portfolio = () => {
                 <li>Node</li>
                 <li>Express</li>
                 <li>Python</li>
+                <li>c++</li>
             </ul>
 
 
