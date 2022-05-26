@@ -29,6 +29,7 @@ const Dashboard = () => {
                     {!admin ?
                         <>
                             <li><Link to='/dashboard/order'>My Order</Link></li>
+                            <li><Link to='/dashboard/myprofile'>My Profile</Link></li>
 
                             <li><Link to='/dashboard/review'>Add Review</Link></li>
                             {/* <li><Link to='/dashboard/history'>My History</Link></li> */}
@@ -36,9 +37,11 @@ const Dashboard = () => {
 
                     {admin &&
                         <>
-                            <li><Link to='/dashboard/users'>All Users</Link></li>
+                            <li><Link to='/dashboard/users'>Make Admin</Link></li>
                             <li><Link to='/dashboard/manage'>Manage Products</Link></li>
+                            <li><Link to='/dashboard/myprofile'>My Profile</Link></li>
                             <li><Link to='/dashboard/manageProducts'>Add Products</Link></li>
+
                             {/* <li><Link to='/dashboard/addDoctor'>All Doctor</Link></li>
                             <li><Link to='/dashboard/manageDoctor'>Manage Doctor</Link></li> */}
                         </>

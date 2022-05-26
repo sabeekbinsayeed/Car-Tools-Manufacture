@@ -74,6 +74,9 @@ const Myprofile = () => {
     }
     return (
         <div className='items-center mx-auto'>
+            <h1 className='mt-6 text-xl font-bold text-black'>Welcome Back {user.displayName}</h1>
+            <h1 className=' font-bold mb-5 '>Your mail {user.email}</h1>
+            <img src={user?.photoURL}></img>
             <h1 className='text-2xl font-bold text-blue-500 mb-5'>Update Info</h1>
             {/* <h2>{userInfo.name}</h2> */}
             {/* <h2>{userInfo.location}</h2> */}

@@ -148,7 +148,7 @@ const AddReview = () => {
 
                         </div>
 
-                        <input class='btn w-full max-w-xs' type="submit" value='Add Review' />
+                        <input class='btn w-full bg-blue-600 hover:bg-white hover:text-black max-w-xs' type="submit" value='Add Review' />
                     </form>
                 </div>
             </div>

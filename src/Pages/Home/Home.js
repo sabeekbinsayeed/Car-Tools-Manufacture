@@ -7,6 +7,7 @@ import Review from './Review';
 import Reviews from './Reviews';
 import Stats from './Stats';
 import Tools from './Tools';
+import Video from './Video';
 
 const Home = () => {
     return (
@@ -16,6 +17,7 @@ const Home = () => {
             <Tools></Tools>
             <Reviews></Reviews>
             <Stats></Stats>
+            <Video></Video>
             <Info></Info>
 
 

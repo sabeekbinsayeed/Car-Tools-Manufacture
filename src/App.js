@@ -39,12 +39,12 @@ function App() {
 
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
-        <Route path="/myprofiles" element={<MyProfiles></MyProfiles>}></Route>
+        {/* <Route path="/myprofiles" element={<MyProfiles></MyProfiles>}></Route> */}
         <Route path="/portfolio" element={<Portfolio></Portfolio>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
         <Route path="/review" element={<Reviews></Reviews>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
-        <Route path="/myprofile" element={<Myprofile></Myprofile>}></Route>
+        {/* <Route path="/myprofile" element={<Myprofile></Myprofile>}></Route> */}
         <Route path="purchase/:id" element={<RequireAuth>
           <Purchase />
         </RequireAuth>}></Route>
@@ -55,6 +55,7 @@ function App() {
         } >
           <Route index element={<DashWelcome></DashWelcome>}></Route>
           <Route path="order" element={<MyOrder></MyOrder>}></Route>
+          <Route path="myprofile" element={<Myprofile></Myprofile>}></Route>
           <Route path="review" element={<AddReview></AddReview>}></Route>
           {/* <Route path="users" element={<Users></Users>}></Route> */}
           <Route path="users" element={<RequireAdmin>
