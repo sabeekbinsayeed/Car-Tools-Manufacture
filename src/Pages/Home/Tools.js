@@ -11,7 +11,7 @@ const Tools = () => {
     const navigate = useNavigate('');
     // https://arcane-plateau-22519.herokuapp.com/products
     useEffect(() => {
-        fetch('http://localhost:5000/tools').then(res => res.json()).then(data => setTools(data))
+        fetch('https://safe-plains-19618.herokuapp.com/tools').then(res => res.json()).then(data => setTools(data))
     }, [])
 
 

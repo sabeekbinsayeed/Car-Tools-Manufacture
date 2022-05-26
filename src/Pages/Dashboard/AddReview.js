@@ -23,7 +23,7 @@ const AddReview = () => {
 
         }
 
-        fetch('http://localhost:5000/review', {
+        fetch('https://safe-plains-19618.herokuapp.com/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

@@ -31,12 +31,27 @@ const Banner = () => {
                 <div class="carousel-inner relative w-full overflow-hidden">
                     <div class="carousel-item active relative float-left w-full">
                         <img
-                            src="https://images.unsplash.com/photo-1610213881011-ba006d40d5b4?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170"
-                            class="block w-full"
-                            style={{ height: '400px' }}
+                            src="https://images.unsplash.com/photo-1580654712603-eb43273aff33?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870"
+                            class="block w-full lg:h-[500px]"
+                            // style={{ height: '450px' }}
                             alt="..."
                         />
                         <div class="carousel-caption hidden md:block absolute text-center">
+                            <h5 class="text-xl text-white ">Get details information</h5>
+                            <button onClick={() => { navigate('/dashboard') }} className='bg-blue-500 btn  mt-1'>Visit dashboard</button>
+
+                        </div>
+                    </div>
+                    <div class="carousel-item relative float-left w-full">
+                        <img
+                            src="https://images.unsplash.com/photo-1485291571150-772bcfc10da5?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928"
+                            class="block w-full lg:h-[500px]"
+                            // style={{ height: '450px' }}
+                            alt="..."
+                        />
+                        <div class="carousel-caption hidden md:block absolute text-center ">
+
+
                             <h5 class="text-xl text-white ">Gather knowledge from us</h5>
                             <button onClick={() => { navigate('/blogs') }} className='bg-blue-500 btn mt-1'>Reads Blogs</button>
 
@@ -44,21 +59,9 @@ const Banner = () => {
                     </div>
                     <div class="carousel-item relative float-left w-full">
                         <img
-                            src="https://images.unsplash.com/photo-1480899867580-7a253ea5b8e2?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174"
-                            class="block w-full"
-                            style={{ height: '400px' }}
-                            alt="..."
-                        />
-                        <div class="carousel-caption hidden md:block absolute text-center ">
-                            <h5 class="text-xl text-white ">Get details information</h5>
-                            <button onClick={() => { navigate('/dashboard') }} className='bg-blue-500 btn  mt-1'>Visit dashboard</button>
-                        </div>
-                    </div>
-                    <div class="carousel-item relative float-left w-full">
-                        <img
                             src="https://images.unsplash.com/photo-1494905998402-395d579af36f?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170"
-                            class="block w-full"
-                            style={{ height: '400px' }}
+                            class="block w-full lg:h-[500px]"
+                            // style={{ height: '450px' }}
                             alt="..."
                         />
                         <div class="carousel-caption hidden md:block absolute text-center">

@@ -6,7 +6,7 @@ import UserRow from './UserRow';
 // import UserRow from './UserRow';
 const Users = () => {
 
-    // const { data: users, isLoading, error, refetch } = useQuery('users', () => fetch('http://localhost:5000/user', {
+    // const { data: users, isLoading, error, refetch } = useQuery('users', () => fetch('https://safe-plains-19618.herokuapp.com/user', {
     //     method: 'GET'
     //     // headers: {
     //     //     authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -16,7 +16,7 @@ const Users = () => {
     // const [users, setUsers] = useState([])
     // useEffect(() => {
 
-    //     fetch(`'http://localhost:5000/user'`).then(res => res.json()).then(data => { console.log(data); setUsers(data) })
+    //     fetch(`'https://safe-plains-19618.herokuapp.com/user'`).then(res => res.json()).then(data => { console.log(data); setUsers(data) })
     // }, [users])
 
 
@@ -31,7 +31,7 @@ const Users = () => {
     // }
 
 
-    const { data: users, isLoading, refetch } = useQuery('doctors', () => fetch(`http://localhost:5000/user`, {
+    const { data: users, isLoading, refetch } = useQuery('doctors', () => fetch(`https://safe-plains-19618.herokuapp.com/user`, {
         // headers: {
         //     authorization: `Bearer ${localStorage.getItem('accessToken')}`
         // }

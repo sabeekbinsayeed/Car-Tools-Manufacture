@@ -20,7 +20,7 @@ const Purchase = () => {
     const [user, loading, error] = useAuthState(auth);
     useEffect(() => {
 
-        fetch(`http://localhost:5000/tools/${id}`).then(res => res.json()).then(data => setTool(data))
+        fetch(`https://safe-plains-19618.herokuapp.com/tools/${id}`).then(res => res.json()).then(data => setTool(data))
     }, [])
     const onSubmit = data => {
         console.log(data.quantity)
@@ -50,7 +50,7 @@ const Purchase = () => {
             }
             console.log(purchase)
             // send to your database 
-            fetch('http://localhost:5000/purchase', {
+            fetch('https://safe-plains-19618.herokuapp.com/purchase', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',

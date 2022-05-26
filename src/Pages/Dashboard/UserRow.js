@@ -1,10 +1,11 @@
 import React from 'react';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const UserRow = ({ user }) => {
-    const { email, role, name, refetch } = user;
+const UserRow = ({ user, refetch }) => {
+    const { email, role, name } = user;
     const makeAdmin = () => {
-        fetch(`http://localhost:5000/user/admin/${email}`, {
+        fetch(`https://safe-plains-19618.herokuapp.com/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -35,6 +36,7 @@ const UserRow = ({ user }) => {
             <td>{email}</td>
             <td>{role !== 'admin' && <button onClick={makeAdmin} class="btn bg-blue-600 btn-xs">Make Admin</button>}</td>
             {/* <td><button class="btn btn-xs">Remove User</button></td> */}
+            <ToastContainer />
         </tr>
     );
 };

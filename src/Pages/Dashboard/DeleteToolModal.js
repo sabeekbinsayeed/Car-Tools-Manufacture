@@ -5,7 +5,7 @@ const DeleteToolModal = ({ deleting, refetch, setDeleting }) => {
     const { name, price, _id } = deleting;
     const handleDelete = () => {
         console.log('eikhane dhuktese delete korte')
-        fetch(`http://localhost:5000/tool/${_id}`, {
+        fetch(`https://safe-plains-19618.herokuapp.com/tool/${_id}`, {
             method: 'DELETE',
             // headers: {
             //     authorization: `Bearer ${localStorage.getItem('accessToken')}`

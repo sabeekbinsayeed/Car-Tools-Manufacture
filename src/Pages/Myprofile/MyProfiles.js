@@ -6,7 +6,7 @@ const MyProfiles = () => {
     const [user, loading, error] = useAuthState(auth);
     const [info, setInfo] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/profile?email=admin@gmail.com`).then(res => res.json()).then(data => setInfo(data))
+        fetch(`https://safe-plains-19618.herokuapp.com/profile?email=admin@gmail.com`).then(res => res.json()).then(data => setInfo(data))
 
     }, [])
 

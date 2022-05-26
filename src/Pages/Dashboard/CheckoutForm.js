@@ -17,7 +17,7 @@ const CheckoutForm = ({ purchase }) => {
     console.log(pricePrice, purchase.pricePrice)
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://safe-plains-19618.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -93,7 +93,7 @@ const CheckoutForm = ({ purchase }) => {
                 appointment: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`http://localhost:5000/purchase/${_id}`, {
+            fetch(`https://safe-plains-19618.herokuapp.com/purchase/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

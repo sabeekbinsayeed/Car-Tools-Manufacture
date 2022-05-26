@@ -1,10 +1,11 @@
 import React from 'react';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const DeleteConfirmModal = ({ deletingInfo, refetch, setDeletingInfo }) => {
-    const { name, email, productName } = deletingInfo;
+    const { name, email, productName, _id } = deletingInfo;
     const handleDelete = () => {
-        fetch(`http://localhost:5000/purchase/${email}`, {
+        fetch(`https://safe-plains-19618.herokuapp.com/purchase/${_id}`, {
             method: 'DELETE',
             // headers: {
             //     authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -14,6 +15,8 @@ const DeleteConfirmModal = ({ deletingInfo, refetch, setDeletingInfo }) => {
             .then(data => {
                 console.log('hosce delete successfully', data);
                 if (data.deletedCount) {
+                    console.log('deleted count er por dhuktese')
+
                     toast.success('sucessfully deleted')
                     setDeletingInfo(null);
                     refetch();
@@ -33,6 +36,7 @@ const DeleteConfirmModal = ({ deletingInfo, refetch, setDeletingInfo }) => {
                     </div>
                 </div>
             </div>
+            <ToastContainer />
         </div >
     );
 };

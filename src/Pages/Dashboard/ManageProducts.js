@@ -21,7 +21,7 @@ const ManageProducts = () => {
 
 
         console.log(tools)
-        fetch('http://localhost:5000/tools', {
+        fetch('https://safe-plains-19618.herokuapp.com/tools', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

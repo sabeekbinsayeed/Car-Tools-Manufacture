@@ -11,7 +11,7 @@ import CheckoutForm from './CheckoutForm';
 const stripePromise = loadStripe('pk_test_51L26i0A2gnAbv9dTvH38YULVDcS1XanH5jNBkg2EHouPRBHcAhQy1Fksf1RNgUiRIK9gh4RA4HSccWFOMlULpIWD00NJhQ12oP');
 const Payment = () => {
     const { id } = useParams();
-    const url = `http://localhost:5000/purchase/${id}`;
+    const url = `https://safe-plains-19618.herokuapp.com/purchase/${id}`;
     const { data: purchase, isLoading } = useQuery(['purchase', id], () => fetch(url, {
         method: 'GET',
         headers: {

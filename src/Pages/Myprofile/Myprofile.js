@@ -13,17 +13,17 @@ const Myprofile = () => {
 
     // const [info, setInfo] = useState([]);
     // useEffect(() => {
-    //     fetch(`http://localhost:5000/profile?email=${user.email}`).then(res => res.json()).then(data => setUserInfo(res))
+    //     fetch(`https://safe-plains-19618.herokuapp.com/profile?email=${user.email}`).then(res => res.json()).then(data => setUserInfo(res))
 
     // }, [])
 
     // useEffect(() => {
-    //     fetch(`http://localhost:5000/profile?email=${user?.email}`).then(res => res.json()).then(data => { setInfo(data); console.log(data) })
+    //     fetch(`https://safe-plains-19618.herokuapp.com/profile?email=${user?.email}`).then(res => res.json()).then(data => { setInfo(data); console.log(data) })
     // }, [])
 
 
 
-    const { data: userInfo, isLoading, refetch } = useQuery('users', () => fetch(`http://localhost:5000/profile?email=${user.email}`, {
+    const { data: userInfo, isLoading, refetch } = useQuery('users', () => fetch(`https://safe-plains-19618.herokuapp.com/profile?email=${user.email}`, {
         // headers: {
         //     authorization: `Bearer ${localStorage.getItem('accessToken')}`
         // }
@@ -52,7 +52,7 @@ const Myprofile = () => {
 
         console.log(user)
 
-        fetch(`http://localhost:5000/profile/`, {
+        fetch(`https://safe-plains-19618.herokuapp.com/profile/`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
