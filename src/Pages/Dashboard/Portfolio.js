@@ -22,6 +22,7 @@ const Portfolio = () => {
                 <li>firebase</li>
                 <li>Node</li>
                 <li>Express</li>
+                <li>Python</li>
             </ul>
 
 
