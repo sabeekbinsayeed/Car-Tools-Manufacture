@@ -18,17 +18,17 @@ const MyOrder = () => {
 
     const [deletingInfo, setDeletingInfo] = useState(null);
     const { data: orders, isLoading, refetch } = useQuery('doctors', () => fetch(`http://localhost:5000/order?email=${user.email}`, {
-        headers: {
-            authorization: `Bearer ${localStorage.getItem('accessToken')}`
-        }
+        // headers: {
+        //     authorization: `Bearer ${localStorage.getItem('accessToken')}`
+        // }
     }).then(res => {
-        console.log('res', res);
-        console.log('response success jwt')
-        if (res.status === 401 || res.status === 403) {
-            signOut(auth);
-            localStorage.removeItem('accessToken')
-            navigate('/');
-        }
+        // console.log('res', res);
+        // console.log('response success jwt')
+        // if (res.status === 401 || res.status === 403) {
+        //     signOut(auth);
+        //     localStorage.removeItem('accessToken')
+        //     navigate('/');
+        // }
         return res.json()
     })
 

@@ -3,6 +3,8 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import auth from '../../firebase.init';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const AddReview = () => {
     const [user, loading, error] = useAuthState(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -33,6 +35,7 @@ const AddReview = () => {
             .then(inserted => {
                 console.log(inserted)
                 console.log(allreview)
+                toast.success('Review added')
                 // if (inserted.insertedId) {
                 //     toast.success('Doctor added successfully')
                 //     reset();
@@ -145,14 +148,14 @@ const AddReview = () => {
 
                         </div>
 
-                        <input class='btn w-full max-w-xs' type="submit" value='login' />
+                        <input class='btn w-full max-w-xs' type="submit" value='Add Review' />
                     </form>
                 </div>
             </div>
 
             <div className='mx-auto' style={{ width: '50%' }}>
                 <img src='https://st2.depositphotos.com/1005979/7918/i/950/depositphotos_79188038-stock-photo-review-magnifying-glass.jpg' className='w-50%'></img>
-
+                <ToastContainer />
             </div>
         </div>
     );

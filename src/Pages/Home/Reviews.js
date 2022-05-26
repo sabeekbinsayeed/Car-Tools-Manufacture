@@ -16,7 +16,7 @@ const Reviews = () => {
                     <h2 class="text-3xl font-bold mb-12">Testimonials</h2>
                     <div className='grid lg:grid-cols-3 gap-x-3 gap-y-3 '>
                         {
-                            reviews.map(review =>
+                            reviews.slice(0).reverse().map(review =>
                                 <Review review={review}></Review>
                             )
                         }

@@ -21,7 +21,10 @@ const Login = () => {
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
     const location = useLocation();
-    const from = location?.state?.from?.pathname || '/'
+    let from = location?.state?.from?.pathname || '/'
+    if (from === '/dashboard/users') {
+        from = '/'
+    }
     const navigate = useNavigate();
     let errorElement;
 

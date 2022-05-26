@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 // npm install --save stripe
 const CheckoutForm = ({ purchase }) => {
     const stripe = useStripe();
@@ -102,6 +104,7 @@ const CheckoutForm = ({ purchase }) => {
                 .then(data => {
                     setProcessing(false);
                     console.log(data);
+                    toast.success('payment done')
                 })
 
         }
@@ -139,7 +142,7 @@ const CheckoutForm = ({ purchase }) => {
                     <p>Your transaction Id: <span className="text-orange-500 font-bold">{transactionId}</span> </p>
                 </div>
             }
-
+            <ToastContainer />
         </>
     );
 };

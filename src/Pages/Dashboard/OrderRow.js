@@ -13,7 +13,7 @@ const OrderRow = ({ order, index, refetch, setDeletingInfo }) => {
             <td>{totalPrice}</td>
             <td>{quantity}</td>
             <td>
-                <label onClick={() => setDeletingInfo(order)} for="delete-confirm-modal" class="btn btn-xs btn-error">Delete</label>
+                {!paid && <label onClick={() => setDeletingInfo(order)} for="delete-confirm-modal" class="btn btn-xs btn-error">Delete</label>}
             </td>
 
             <td>

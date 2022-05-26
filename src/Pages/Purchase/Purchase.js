@@ -4,6 +4,8 @@ import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './Purchase.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Purchase = () => {
     const { id } = useParams();
@@ -22,8 +24,12 @@ const Purchase = () => {
     }, [])
     const onSubmit = data => {
         console.log(data.quantity)
+        if (!data.quantity) {
 
-        if (data.quantity < tool.min_quantity) {
+        }
+
+
+        else if (data.quantity < tool.min_quantity) {
             console.log('error')
             setErrorQuantity('error: cannnot order less than minimum quantity ')
         }
@@ -55,6 +61,9 @@ const Purchase = () => {
                 .then(res => res.json())
                 .then(inserted => {
                     console.log(inserted)
+                    toast.success('sucessfully done')
+
+
                     // if (inserted.insertedId) {
                     //     toast.success('Doctor added successfully')
                     //     reset();
@@ -149,7 +158,7 @@ const Purchase = () => {
                                                     <span className="label-text">Quantity</span>
 
                                                 </label>
-                                                <input type="text" placeholder="Your quantity" className="input input-bordered w-full max-w-xs"
+                                                <input required type="text" placeholder={`Minimum quantity ${tool.min_quantity}`} className="input input-bordered w-full max-w-xs"
                                                     {...register("quantity", {
 
                                                         required: { value: true, message: 'quantity is required' },
@@ -164,10 +173,9 @@ const Purchase = () => {
 
 
                                                 </label>
-                                                <p className='text-red-500 py-2'><small> {errorQuantity ? errorQuantity : ''}</small></p>
-
                                             </div>
 
+                                            <p className='text-red-500'><small>{errorQuantity}</small></p>
 
                                             {/* end */}
 
@@ -203,6 +211,7 @@ const Purchase = () => {
                             </div> */}
                         </div>
                     </div>
+                    <ToastContainer />
                 </div >
             </section >
 
